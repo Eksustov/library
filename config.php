@@ -1,9 +1,9 @@
 <?php
 return [
     "host" => "localhost",
-    "dbname" => "library",
+    "dbname" => "IPb22-LibaryPujats",
     "user" => "root",
-    "password" => "",
+    "password" => "root",
     "charset" => "utf8mb4"
 ];
 ?>

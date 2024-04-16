@@ -18,6 +18,4 @@ class Validator {
                 && $data <= $max;
     }
 
-
-
 }

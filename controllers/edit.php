@@ -25,10 +25,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
         $errors["date"] = "Date cannot be empty";
     }
 
-    if ($_POST["availability"] != "TRUE" && $_POST["availability"] == "FALSE" ) {
-        if($_POST["availability"] = "TRUE" && $_POST["availability"] != "FALSE"){
-        $errors["availability"] = "it works";
-        }
+    if (!Validator::number($_POST["availability"])) {
+        $errors["availability"] = "Availability cannot be empty";
     }
 
     if (empty($errors)) {
