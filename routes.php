@@ -1,8 +1,12 @@
 <?php
 return $routes = [
     "/" =>"controllers/index.php",
-    "/create" =>"controllers/create.php",
-    "/delete" => "controllers/delete.php",
-    "/show" => "controllers/show.php",
-    "/edit" => "controllers/edit.php"
+
+    "/create" =>"controllers/books/create.php",
+    "/delete" => "controllers/books/delete.php",
+    "/edit" => "controllers/books/edit.php",
+
+    "/login" =>"controllers/auth/login.php",
+    "/logout" =>"controllers/auth/logout.php",
+    "/register" =>"controllers/auth/register.php"
 ];

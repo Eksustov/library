@@ -10,8 +10,8 @@
         htmlspecialchars($book["date"])
         ." / ".
         htmlspecialchars($book["availability"])?>
-    <form method="POST" action="/show?id=<?= $book["id"]?>">
-    <button name="id" value="<?= $book["id"] ?>">Show</button>
+    <form method="Edit" action="/edit?id=<?= $book["id"]?>">
+    <button name="id" value="<?= $book["id"] ?>">Edit</button>
     </form>
     <form method="POST" action="/delete">
         <button name="id" value="<?= $book["id"] ?>">Delete</button>

@@ -2,7 +2,7 @@
 
 $config = require("config.php");
 
-require "Database.php";
+require "Core/Database.php";
 
 $query = "SELECT * FROM books";
 $params = [];
