@@ -10,12 +10,28 @@
         htmlspecialchars($book["date"])
         ." / ".
         htmlspecialchars($book["availability"])?>
-    <form method="Edit" action="/edit?id=<?= $book["id"]?>">
-    <button name="id" value="<?= $book["id"] ?>">Edit</button>
-    </form>
-    <form method="POST" action="/delete">
-        <button name="id" value="<?= $book["id"] ?>">Delete</button>
-    </form>
+
+    <?php if (isset($_SESSION["user_id"])) {?>
+        <form method="POST" action="/return?id=<?= $book["id"]?>">
+            <button name="id" value="<?= $book["id"] ?>">Return</button>
+        </form>
+    <?php } else { ?>
+        <form method="POST" action="/borrow?id=<?= $book["id"]?>">
+            <button name="id" value="<?= $book["id"] ?>">Borrow</button>
+        </form>
+    <?php } ?>
+
+    <?php if (isset($_SESSION["user_admin"]) && $_SESSION["user_admin"] == 1) {?>
+    
+        <form method="POST" action="/edit?id=<?= $book["id"]?>">
+            <button name="id" value="<?= $book["id"] ?>">Edit</button>
+        </form>
+
+        <form method="POST" action="/delete">
+            <button name="id" value="<?= $book["id"] ?>">Delete</button>
+        </form>
+    <?php } ?>
+
     </li>
     <?php }?>
 </ul>

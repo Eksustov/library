@@ -29,11 +29,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     }
 
     if(empty($errors)){
-        $query = "INSERT INTO users (email, password)
-        VALUES (:email, :password);";
+        $query = "INSERT INTO users (email, password, admin)
+        VALUES (:email, :password, :admin);";
             $params = [
                 ":email" => $_POST["email"],
-                ":password" => password_hash($_POST["password"], PASSWORD_BCRYPT)
+                ":password" => password_hash($_POST["password"], PASSWORD_BCRYPT),
+                ":admin" => 0
             ];
         $result = $db->execute($query, $params);
 

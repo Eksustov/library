@@ -1,4 +1,6 @@
 <?php
+admin();
+
 require "Core/Database.php";
 $config = require("config.php");
 

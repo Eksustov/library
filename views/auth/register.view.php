@@ -15,10 +15,10 @@
 </form>
 <?php
     if (isset($errors["email"])) {?>
-        <p><?= $errors["email"] ?></p>
+        <p class="error"><?= $errors["email"] ?></p>
     <?php };
     if (isset($errors["password"])) {?>
-        <p><?= $errors["password"] ?></p>
+        <p class="error"><?= $errors["password"] ?></p>
     <?php } ?>
 
     <a href="/login">Login</a>

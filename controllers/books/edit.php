@@ -1,4 +1,7 @@
 <?php
+
+admin();
+
 $config = require("config.php");
 require "Core/Database.php";
 require "Core/Validator.php";

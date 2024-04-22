@@ -20,5 +20,11 @@ function guest(){
         die();
     }
 }
+function admin(){
+    if($_SESSION["user_admin"] !== 1){
+        header("Location: /");
+        die();
+    }
+}
 
 ?>

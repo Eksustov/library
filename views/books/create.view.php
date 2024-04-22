@@ -15,17 +15,18 @@
         <input type="number" name="availability" value='<?= htmlspecialchars(($_POST["availability"] ?? "" )) ?>'/>
     </label>
     <button>Save</button>
-    <?php if (isset($errors["name"])) {?>
-        <p><?= $errors["name"] ?></p>
+    <?php 
+        if (isset($errors["name"])) {?>
+            <p><?= $errors["name"] ?></p>
         <?php } ?>
         <?php if (isset($errors["author"])) {?>
-        <p><?= $errors["author"] ?></p>
+            <p><?= $errors["author"] ?></p>
         <?php } ?>
         <?php if (isset($errors["date"])) {?>
-        <p><?= $errors["date"] ?></p>
+            <p><?= $errors["date"] ?></p>
         <?php } ?>
         <?php if (isset($errors["availability"])) {?>
-        <p><?= $errors["availability"] ?></p>
+            <p><?= $errors["availability"] ?></p>
         <?php } ?>
 </form>
 

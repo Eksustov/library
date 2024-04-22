@@ -30,6 +30,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     if(empty($errors)){
         $_SESSION["user"] = true;
         $_SESSION["email"] = $_POST["email"];
+        $_SESSION["user_id"] = $user["id"];
+        $_SESSION["user_admin"] = $user["admin"];
         header("Location: /");
         die();
     }

@@ -1,6 +1,6 @@
 <?php require "views/components/head.php" ?>
 <?php require "views/components/navbar.php" ?>
-<h2>Login in library</h2>
+<h2>Login library</h2>
 <form method="POST">
     <label>
         Email: 
@@ -15,7 +15,7 @@
 </form>
 <?php
     if (isset($errors["login"])) {?>
-        <p><?= $errors["login"] ?></p>
+        <p class="error"><?= $errors["login"] ?></p>
     <?php };?>
 
 <?php if(isset($_SESSION["flash"])) { ?>
