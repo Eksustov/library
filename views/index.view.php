@@ -11,28 +11,32 @@
         ." / ".
         htmlspecialchars($book["availability"])?>
 
-    <?php if (isset($_SESSION["user_id"])) {?>
-        <form method="POST" action="/return?id=<?= $book["id"]?>">
-            <button name="id" value="<?= $book["id"] ?>">Return</button>
-        </form>
-    <?php } else { ?>
-        <form method="POST" action="/borrow?id=<?= $book["id"]?>">
-            <button name="id" value="<?= $book["id"] ?>">Borrow</button>
-        </form>
-    <?php } ?>
+        <?php if ($book["availability"] > 0) {?>
+            <form method="POST" action="/borrow?id=<?= $book["book_id"]?>">
+                <button name="book_id" value="<?= $book["book_id"] ?>">Borrow</button>
+            </form>
+        <?php } elseif ($book["availability"] <= 0) { ?>
+            <form>
+                <button>Unavailable</button>
+            </form>
+        <?php } elseif ($book["user_id"] == $_SESSION["user_id"] && $book["book_id"] == $book["id"]){?>
+            <form method="POST" action="/return?id=<?= $book["book_id"]?>">
+                <button name="book_id" value="<?= $book["book_id"] ?>">Return</button>
+            </form>
+        <?php } ?> 
 
     <?php if (isset($_SESSION["user_admin"]) && $_SESSION["user_admin"] == 1) {?>
     
-        <form method="POST" action="/edit?id=<?= $book["id"]?>">
-            <button name="id" value="<?= $book["id"] ?>">Edit</button>
+        <form method="POST" action="/edit?id=<?= $book["book_id"]?>">
+            <button name="book_id" value="<?= $book["book_id"] ?>">Edit</button>
         </form>
 
         <form method="POST" action="/delete">
-            <button name="id" value="<?= $book["id"] ?>">Delete</button>
+            <button name="book_id" value="<?= $book["book_id"] ?>">Delete</button>
         </form>
     <?php } ?>
 
     </li>
-    <?php }?>
+    <?php } ?>
 </ul>
 <?php require "components/footer.php" ?>
