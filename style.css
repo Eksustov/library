@@ -27,26 +27,40 @@ nav{
     margin-top: 2px;
 }
 
-a{
-    text-decoration:none;
-    color:rgb(0, 0, 0);
-    font-size: 30px;
-}
-
-a:hover{
-    color:white;
-}
 h1, h2 {
     text-align:center;
 }
+
+a {
+    text-decoration:none;
+    color: rgb(0, 0, 0);
+}
+
 button {
-    background-color: rgb(195, 178, 153);
+    background-color: rgb(161, 129, 117);
     cursor: pointer;
     border: none;
     text-align: center;
     font-size:20px;
 
 }
+
+form {
+    size: 20px;
+    display:inline;
+}
+
+form:hover {
+    font-size:1,2em;
+    size: 1px;
+}
+
+.auth-style {
+    size: 20px;
+    display:block;
+    margin-bottom: 10px;
+}
+
 li, label, input {
     font-size: 25px;
 }

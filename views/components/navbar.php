@@ -1,14 +1,20 @@
 <header>
         <nav>
-            <a href="/">Katalogs</a>
+            <form>
+                <button action="/">Katalogs</button>
+            </form>
 
             <?php if (isset($_SESSION["user_admin"])) {
                 if ($_SESSION["user_admin"] == 1) { ?>
-                    <a href="/create">Add a Book</a>
+                    <form action="/create">
+                        <button>Add a Book</button>
+                    </form>
             <?php } }?>
 
             <?php if (!isset($_SESSION["email"])) { ?>
-                <button><a href="/login">Login</a></button>
+                <form action="/login">
+                    <button>Login</button>
+                </form>
             <?php } else { ?>
                 <form action="/logout" method="POST">
                     <button>Logout</button>

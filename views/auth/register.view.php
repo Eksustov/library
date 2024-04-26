@@ -1,7 +1,7 @@
 <?php require "views/components/head.php" ?>
 <?php require "views/components/navbar.php" ?>
 <h2>Register in library</h2>
-<form method="POST">
+<form method="POST" class="auth-style">
     <label>
         Email: 
         <input name="email" type="email"/>
@@ -21,5 +21,5 @@
         <p class="error"><?= $errors["password"] ?></p>
     <?php } ?>
 
-    <a href="/login">Login</a>
+    <form action="/login"><button>Login</button></form>
 <?php require "views/components/footer.php" ?>

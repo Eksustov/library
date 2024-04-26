@@ -1,7 +1,7 @@
 <?php require "views/components/head.php" ?>
 <?php require "views/components/navbar.php" ?>
 <h2>Login library</h2>
-<form method="POST">
+<form class="auth-style" method="POST">
     <label>
         Email: 
         <input name="email" type="email"/>
@@ -22,7 +22,7 @@
     <p><?= $_SESSION["flash"]?></p>
 <?php } ?>
 
-<a href="/register">Register</a>
+<form action="/register"><button>Register</button></form>
 
 <?php require "views/components/footer.php" ?>
 <?php require "views/components/footer.php" ?>
