@@ -64,6 +64,15 @@ form:hover {
 li, label, input {
     font-size: 25px;
 }
+
+li {
+    text-align:center;
+    list-style-type: none;
+    background-color: rgba(162, 146, 142, 0.511);
+    margin: 5px;
+    border-radius: 10px;
+}
+
 h2 {
     font-size:40px;
 }
@@ -72,4 +81,24 @@ input{
 }
 .error{
     color:red;
+}
+
+.main {
+    font-size:1,2em;
+    padding: 15px;
+    font-weight: bold;
+}
+
+.auth {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.auth-style {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }

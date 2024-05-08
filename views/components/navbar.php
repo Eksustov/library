@@ -1,7 +1,11 @@
 <header>
         <nav>
             <form>
-                <button action="/">Katalogs</button>
+                <button>
+                    <a href="/">
+                        Katalogs
+                    </a>
+                </button>
             </form>
 
             <?php if (isset($_SESSION["user_admin"])) {

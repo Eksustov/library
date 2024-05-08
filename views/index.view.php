@@ -13,14 +13,14 @@
 
 
 
-        <?php /* Es nesaprotu kā šito kodu taisīt un kā uztaisīt to lai strādā kā vajag
+        <?php
         
         
         foreach($borrowed_books as $borrowed_book) { ?>
 
         <?php if ($book["availability"] > 0) {
             
-            if (!isset($_SESSION["user_id"])) {?>
+            if (!isset($_SESSION["email"])) {?>
                 <form>
                     <button>
                         <a href="/borrow?id=<?= $book["book_id"]?>">Login to Borrow</a>
@@ -38,11 +38,11 @@
                         <a href="/return?id=<?= $book["book_id"]?>"> Return </a>
                     </button>
                 </form>
-            <?} } else { ?>
+            <?}  else { ?>
             <form>
                 <button>Unavailable</button>
             </form>
-        <?php } */?>
+        <?php } ?>
 
     <?php if (isset($_SESSION["user_admin"]) && $_SESSION["user_admin"] == 1) {?>
     
@@ -58,6 +58,6 @@
     <?php } ?>
 
     </li>
-    <?php } //}; }?>
+    <?php } } }?>
 </ul>
 <?php require "components/footer.php"; ?>

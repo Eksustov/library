@@ -1,7 +1,6 @@
 <?php
 
 $config = require("config.php");
-
 require "Core/Database.php";
 
 $query = "SELECT books.id AS book_id, name, author, date, availability

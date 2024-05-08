@@ -1,5 +1,7 @@
 <?php require "views/components/head.php" ?>
 <?php require "views/components/navbar.php" ?>
+
+<div class="auth">
 <h2>Register in library</h2>
 <form method="POST" class="auth-style">
     <label>
@@ -11,8 +13,9 @@
         <input name="password" type="password"/>
         <span class="explanation">(Jābūt vismaz 8 rakstzīmēm, 1 lielam, 1 mazam burtam, 1 skaitlis, 1 simbols)</span>
     </label>
-    <button>Register</button>
+    <button class="main">Register</button>
 </form>
+</div>
 <?php
     if (isset($errors["email"])) {?>
         <p class="error"><?= $errors["email"] ?></p>

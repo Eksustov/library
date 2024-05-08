@@ -39,5 +39,3 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
 $title = "LOGIN";
 require "views/auth/login.view.php";
-
-unset($_SESSION["flash"]);
