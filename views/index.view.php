@@ -12,38 +12,24 @@
         htmlspecialchars($book["availability"])?>
 
 
-
-        <?php
-        
-        
-        foreach($borrowed_books as $borrowed_book) { ?>
-
-        <?php if ($book["availability"] > 0) {
-            
-            if (!isset($_SESSION["email"])) {?>
-                <form>
-                    <button>
-                        <a href="/borrow?id=<?= $book["book_id"]?>">Login to Borrow</a>
-                    </button>
-                </form>
-            <?} elseif ($_SESSION["user_id"] !== $borrowed_book["user_id"]) {?>
-                <form>
-                    <button>
-                        <a href="/borrow?id=<?= $book["book_id"]?>">Borrow</a>
-                    </button>
-                </form>
-            <?php } elseif ($borrowed_book["user_id"] == $_SESSION["user_id"] && $borrowed_book["book_id"] == $book["book_id"]) {?>
-                <form>
-                    <button >
-                        <a href="/return?id=<?= $book["book_id"]?>"> Return </a>
-                    </button>
-                </form>
-            <?}  else { ?>
+<?php if ($book["availability"] > 0) { ?>         
+    <?php if (!isset($_SESSION["email"])) {?>
+        <form>
+            <button>
+                <a href="/login">Login to Borrow</a>
+            </button>
+        </form>
+    <?php } elseif (isset($_SESSION["email"])) {?>
+        <form method="POST" action="/borrow">
+            <button name="book_id" value="<?= $book["book_id"] ?>">
+                Borrow
+            </button>
+        </form>
+    <?php } } else { ?>
             <form>
                 <button>Unavailable</button>
             </form>
         <?php } ?>
-
     <?php if (isset($_SESSION["user_admin"]) && $_SESSION["user_admin"] == 1) {?>
     
         <form>
@@ -58,6 +44,6 @@
     <?php } ?>
 
     </li>
-    <?php } } }?>
+    <?php } ?>
 </ul>
 <?php require "components/footer.php"; ?>

@@ -6,6 +6,11 @@ $config = require("config.php");
 require "Core/Database.php";
 require "Core/Validator.php";
 
+$query = "SELECT * FROM authors";
+$params = [];
+$db = new Database($config);
+$authors = $db->execute($query, $params)->fetchAll();
+
 if ($_SERVER["REQUEST_METHOD"] == "POST"){
     $errors=[];
 

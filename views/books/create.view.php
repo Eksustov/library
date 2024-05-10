@@ -6,7 +6,11 @@
         <input name="name" value='<?= htmlspecialchars(($_POST["name"] ?? "" )) ?>'/>
     </label>
     <label>Author:
-        <input name="author" value='<?= htmlspecialchars(($_POST["author"] ?? "" )) ?>'/>
+        <select name="authors" id="authors">
+            <?php foreach ($authors as $author) { ?>
+                <option value=<?=($_POST["author"] ?? $author["name"] )?>><?=htmlspecialchars(($_POST["author"] ?? $author["name"] ))?></option>
+            <?php } ?>
+            </select>
     </label>
     <label>Date:
         <input type="date" name="date" value='<?= htmlspecialchars(($_POST["date"] ?? "" )) ?>'/>
